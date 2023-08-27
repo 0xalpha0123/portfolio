@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as emailjs from "emailjs-com";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -44,8 +45,27 @@ const Contact = () => {
     const form = event.target;
     const isValid = form.checkValidity();
     if (isValid) {
-      // Submit the form
-      form.submit();
+      // // Submit the form
+      // form.submit();
+      const templateParams = {
+        email: form.email,
+        from_name: form.name,
+        to_name: "Ernesto Munes",
+        message: form.message,
+      };
+
+      emailjs
+        .send(
+          "service_8gnjo9d",
+          "template_ekmwmpf",
+          templateParams,
+          "dxftUjOt8Lx-jFcg5"
+        )
+        .then(
+          (result) => {},
+          (error) => {}
+        );
+
       setForm({
         name: "",
         email: "",
