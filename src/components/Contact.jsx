@@ -42,36 +42,33 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
-    const isValid = form.checkValidity();
-    if (isValid) {
-      // // Submit the form
-      // form.submit();
-      const templateParams = {
-        email: form.email,
-        from_name: form.name,
-        to_name: "Ernesto Munes",
-        message: form.message,
-      };
 
-      emailjs
-        .send(
-          "service_8gnjo9d",
-          "template_ekmwmpf",
-          templateParams,
-          "dxftUjOt8Lx-jFcg5"
-        )
-        .then(
-          (result) => {},
-          (error) => {}
-        );
+    // // Submit the form
+    // form.submit();
+    const templateParams = {
+      email: form.email,
+      from_name: form.name,
+      to_name: "Ernesto Munes",
+      message: form.message,
+    };
 
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-    }
+    emailjs
+      .send(
+        "service_8gnjo9d",
+        "template_ekmwmpf",
+        templateParams,
+        "dxftUjOt8Lx-jFcg5"
+      )
+      .then(
+        (result) => {},
+        (error) => {}
+      );
+
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -85,11 +82,9 @@ const Contact = () => {
         something great.
       </motion.p>
       <div className={style.container}>
-        <motion.form
+        <form
           variants={slideIn("left", "", 0, 1)}
           onSubmit={handleSubmit}
-          action="https://formspree.io/f/mgeqgkdd"
-          method="post"
           className={style.form}
         >
           <input
@@ -126,7 +121,7 @@ const Contact = () => {
             <span className={style.btn_hover}>Get in touch</span>
             <span className={style.btn}>Get in touch</span>
           </button>
-        </motion.form>
+        </form>
         <motion.div
           variants={slideIn("right", "", 0, 1)}
           className={style.mapContainer}
