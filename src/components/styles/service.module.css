@@ -1,0 +1,220 @@
+.title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  padding: 8px 0;
+  margin-top: 100px;
+  margin-bottom: 25px;
+}
+
+.title::after {
+  content: "";
+  background-color: var(--white);
+  width: 60px;
+  height: 2.5px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: var(--white);
+}
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  padding: 50px 0;
+}
+
+.tilt {
+  width: 260px;
+}
+
+.card_shadow {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #b1bcdc 1.9%, #0086ce 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #b1bcdc 1.9%, #0086ce 97.5%);
+  padding: 1px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card_shadow:hover {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #0086ce 1.9%, #b1bcdc 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #0086ce 1.9%, #b1bcdc 97.5%);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+.card {
+  background-color: var(--dark-blue);
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.img_container {
+  width: 130px;
+  height: 130px;
+  margin: 7px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.text {
+  font-size: 0.7rem;
+  color: var(--white);
+}
+
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .tilt {
+    width: 300px;
+  }
+
+  .card {
+    padding: 20px 25px;
+    gap: 10px;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .card_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+  }
+
+  .tilt {
+    width: 260px;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+
+  .text {
+    padding: 0 5px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card_container {
+    gap: 60px;
+  }
+
+  .tilt {
+    width: 285px;
+  }
+
+  .img_container {
+    align-items: flex-end;
+  }
+
+  .text {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .title::after {
+    width: 80px;
+  }
+
+  .card_container {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 30px;
+    gap: 25px;
+  }
+
+  .tilt {
+    width: 325px;
+  }
+
+  .card {
+    padding: 20px 17px;
+    gap: 5px;
+    height: 252px;
+  }
+
+  .img_container {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card_container {
+    gap: 40px;
+  }
+
+  .card {
+    height: 270px;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+
+  .text {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+}
